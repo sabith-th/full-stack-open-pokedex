@@ -35,3 +35,4 @@ jobs:
           heroku_email: sabith.th.07@gmail.com
           healthcheck: https://fullstack-open-pokedex.herokuapp.com/health
           checkstring: ok
+          rollbackonhealthcheckfailed: true
