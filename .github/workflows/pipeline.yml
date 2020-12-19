@@ -33,3 +33,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: fullstack-open-pokedex
           heroku_email: sabith.th.07@gmail.com
+          healthcheck: https://fullstack-open-pokedex.herokuapp.com/health
+          checkstring: ok
