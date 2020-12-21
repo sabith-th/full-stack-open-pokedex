@@ -47,3 +47,11 @@ jobs:
           healthcheck: https://fullstack-open-pokedex.herokuapp.com/health
           checkstring: ok
           rollbackonhealthcheckfailed: true
+      - name: slack notification
+        if: ${{ always() }}
+        uses: 8398a7/action-slack@v3.8.1
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
